@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Riko Shop</string>
+    <string name="produk_name" />
+    <string name="produk_detail" />
 </resources>
