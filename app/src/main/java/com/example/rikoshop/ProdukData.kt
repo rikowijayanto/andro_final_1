@@ -92,4 +92,22 @@ object ProdukData {
         R.drawable.andre_3,
         R.drawable.andre_4
         )
+
+
+    //mengirimkan dari data source ke bridge
+    val listData : ArrayList<Produk>
+
+        get() {
+            val list = arrayListOf<Produk>()
+            for (position in produk_nama.indices) {
+                val hero = Produk()
+                hero.nama = produk_nama[position] //mengambil nama produk
+                hero.detail = produk_detail[position] //mengambil detail produk
+                hero.harga = produk_harga[position] //mengambil harga produk
+                hero.gambar = produk_gambar[position] //mengambil gambar produk
+                list.add(hero) //masukkan ke list
+            }
+
+            return list //dikembalikan per list berisi 4 elemen tersebut
+        }
 }
