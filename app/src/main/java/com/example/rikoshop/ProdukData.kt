@@ -74,4 +74,40 @@ object ProdukData {
         "Rp. 81.000,00",
         "Rp. 79.900,00"
     )
+
+    private val produk_gambar = intArrayOf(
+        R.drawable.harry_1,
+        R.drawable.harry_2,
+        R.drawable.harry_3,
+        R.drawable.harry_4,
+        R.drawable.harry_5,
+        R.drawable.harry_6,
+        R.drawable.harry_7,
+        R.drawable.tere_1,
+        R.drawable.tere_2,
+        R.drawable.tere_3,
+        R.drawable.tere_4,
+        R.drawable.andre_1,
+        R.drawable.andre_2,
+        R.drawable.andre_3,
+        R.drawable.andre_4
+        )
+
+
+    //mengirimkan dari data source ke bridge
+    val listData : ArrayList<Produk>
+
+        get() {
+            val list = arrayListOf<Produk>()
+            for (position in produk_nama.indices) {
+                val hero = Produk()
+                hero.nama = produk_nama[position] //mengambil nama produk
+                hero.detail = produk_detail[position] //mengambil detail produk
+                hero.harga = produk_harga[position] //mengambil harga produk
+                hero.gambar = produk_gambar[position] //mengambil gambar produk
+                list.add(hero) //masukkan ke list
+            }
+
+            return list //dikembalikan per list berisi 4 elemen tersebut
+        }
 }
