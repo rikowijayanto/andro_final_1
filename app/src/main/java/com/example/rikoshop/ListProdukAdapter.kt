@@ -32,10 +32,16 @@ class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Ada
             .apply(RequestOptions().override(55, 55))
             .into(holder.tvgambar)
 
+        Glide.with(holder.itemView.context)
+            .load(produk.rating)
+            .apply(RequestOptions().override(300, 60))
+            .into(holder.tvrating)
+
 
         holder.tvnama.text = produk.nama   //menyimpan nama produk
-        holder.tvdetail.text = produk.detail //menyimpan detail produk
+        holder.tvpengarang.text = produk.pengarang //menyimpan detail produk
         holder.tvharga.text = produk.harga //menyimpan harga produk
+        holder.tvlokasi.text = produk.lokasi //menyimpan variabel lokasi
     }
 
 
@@ -48,9 +54,11 @@ class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Ada
     //class inner inisiasi isi
     inner class ListViewHolder(itemView: View) :RecyclerView.ViewHolder (itemView) {
         var tvnama : TextView = itemView.findViewById(R.id.tv_item_name) //membaca dan inisiasi nama produk
-        var tvdetail : TextView = itemView.findViewById(R.id.tv_item_detail) //membaca dan inisiasi detail produk
+        var tvpengarang : TextView = itemView.findViewById(R.id.tv_item_author) //membaca dan inisiasi detail produk
         var tvharga : TextView = itemView.findViewById(R.id.tv_item_harga) //membaca dan inisiasi harga produk
         var tvgambar : ImageView = itemView.findViewById(R.id.img_item_photo) //membaca dan inisiasi gambar produk
+        var tvlokasi : TextView = itemView.findViewById(R.id.tv_item_tempat) //membaca dan mengambil lokasi
+        var tvrating : ImageView = itemView.findViewById(R.id.tv_item_rating) //membaca dan mengambil rating
     }
 
 
