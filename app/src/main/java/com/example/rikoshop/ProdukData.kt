@@ -93,6 +93,42 @@ object ProdukData {
         R.drawable.andre_4
         )
 
+    private val produk_pengarang = arrayOf (
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "Tere Liye",
+        "Tere Liye",
+        "Tere Liye",
+        "Tere Liye",
+        "Andrea Hirata",
+        "Andrea Hirata",
+        "Andrea Hirata",
+        "Andrea Hirata"
+    )
+
+    private val produk_bahasa = arrayOf(
+        "Inggris",
+        "Inggris",
+        "Inggris",
+        "Inggris",
+        "Inggris",
+        "Inggris",
+        "Inggris",
+        "Indonesia",
+        "Indonesia",
+        "Indonesia",
+        "Indonesia",
+        "Indonesia",
+        "Indonesia",
+        "Indonesia",
+        "Indonesia"
+    )
+
 
     //mengirimkan dari data source ke bridge
     val listData : ArrayList<Produk>
