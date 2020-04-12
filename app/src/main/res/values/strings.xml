@@ -2,4 +2,6 @@
     <string name="app_name">Riko Shop</string>
     <string name="produk_name"> Nama Produk </string>/
     <string name="produk_detail" > Detail Produk </string>
+    <string name="produk_nama"> Nama Produk </string>
+    <string name="produk_harga"> Harga Produk </string>
 </resources>

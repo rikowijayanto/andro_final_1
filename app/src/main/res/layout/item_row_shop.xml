@@ -35,7 +35,7 @@
             android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="@string/produk_name" />
+            tools:text="@string/produk_nama" />
 
 
         <TextView
@@ -45,6 +45,15 @@
             android:ellipsize="end"
             android:maxLines="2"
             tools:text="@string/produk_detail" />
+
+        <TextView
+            android:id="@+id/tv_item_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textStyle="bold"
+            tools:text="@string/produk_harga" />
     </LinearLayout>
 
 
