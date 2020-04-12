@@ -74,4 +74,22 @@ object ProdukData {
         "Rp. 81.000,00",
         "Rp. 79.900,00"
     )
+
+    private val produk_gambar = intArrayOf(
+        R.drawable.harry_1,
+        R.drawable.harry_2,
+        R.drawable.harry_3,
+        R.drawable.harry_4,
+        R.drawable.harry_5,
+        R.drawable.harry_6,
+        R.drawable.harry_7,
+        R.drawable.tere_1,
+        R.drawable.tere_2,
+        R.drawable.tere_3,
+        R.drawable.tere_4,
+        R.drawable.andre_1,
+        R.drawable.andre_2,
+        R.drawable.andre_3,
+        R.drawable.andre_4
+        )
 }
