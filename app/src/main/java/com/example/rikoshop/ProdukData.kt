@@ -9,7 +9,7 @@ object ProdukData {
         "Harry Potter and The Chamber of Secret",
         "Harry Potter and The Prisoner of Azkaban",
         "Harry Potter and The Goblet of Fire",
-        "Harry Potter and The Orde Phoenix",
+        "Harry Potter and The Order Phoenix",
         "Harry Potter and The Half Blood Prince",
         "Harry Potter and The Deathly Hallows",
         "Eliana",
@@ -47,7 +47,8 @@ object ProdukData {
                 "untuk selama-lamanya. Namun, pertumpahan terjadi dimana-mana karena pelahap maut juga turut andil dan Voldemort mampu mengumpulkan pasukanya kembali." +
                 "Akahkan Hogwart akhirnya selamat? Bagaimana dengan Harry dan kawan-kawannya?",
 
-        "Buku pertama Tere Liye dari serial anak-anak mamak",
+        "Buku pertama Tere Liye dari serial anak-anak mamak ini menceritakan tentang sosok Eliana yang sangat pemberani dan berani penumpas segala kejahatan. Bahkan dikisahkan bahwa Eliana " +
+                "dibesarkan dengan ketangguhan akan menghadapi suatu masalah",
         "Buku kedua Tere Liye dari serial anak-anak mamak",
         "Buku ketiga Tere Liye dari serial anak-anak mamak",
         "Buku keempat Tere Liye dari serial anak-anak mamak",
@@ -93,6 +94,60 @@ object ProdukData {
         R.drawable.andre_4
         )
 
+    private val produk_pengarang = arrayOf (
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "J.K Rowling",
+        "Tere Liye",
+        "Tere Liye",
+        "Tere Liye",
+        "Tere Liye",
+        "Andrea Hirata",
+        "Andrea Hirata",
+        "Andrea Hirata",
+        "Andrea Hirata"
+    )
+
+    private val produk_lokasi = arrayOf(
+        "DKI Jakarta",
+        "DKI Jakarta",
+        "Surabaya",
+        "Bandung",
+        "DKI Jakarta",
+        "Bandung",
+        "Bandung",
+        "Bogor",
+        "DKI Jakarta",
+        "DKI Jakarta",
+        "DKI Jakarta",
+        "Bandung",
+        "Surabaya",
+        "Surabaya",
+        "Surabaya"
+    )
+
+    private val produk_rating = intArrayOf(
+        R.drawable.rating_4,
+        R.drawable.rating_3,
+        R.drawable.rating_5,
+        R.drawable.rating_4,
+        R.drawable.rating_4,
+        R.drawable.rating_5,
+        R.drawable.rating_4,
+        R.drawable.rating_3,
+        R.drawable.rating_4,
+        R.drawable.rating_5,
+        R.drawable.rating_5,
+        R.drawable.rating_4,
+        R.drawable.rating_3,
+        R.drawable.rating_3,
+        R.drawable.rating_4
+    )
+
 
     //mengirimkan dari data source ke bridge
     val listData : ArrayList<Produk>
@@ -102,9 +157,11 @@ object ProdukData {
             for (position in produk_nama.indices) {
                 val hero = Produk()
                 hero.nama = produk_nama[position] //mengambil nama produk
-                hero.detail = produk_detail[position] //mengambil detail produk
+                hero.pengarang = produk_pengarang[position] //mengambil detail produk
                 hero.harga = produk_harga[position] //mengambil harga produk
                 hero.gambar = produk_gambar[position] //mengambil gambar produk
+                hero.lokasi = produk_lokasi[position] //mengambil lokasi produk
+                hero.rating = produk_rating[position] //mengambil gambar rating
                 list.add(hero) //masukkan ke list
             }
 
