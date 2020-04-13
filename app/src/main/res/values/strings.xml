@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Halaman Utama</string>
     <string name="produk_name"> Nama Produk </string>/
-    <string name="produk_detail" > Detail Produk </string>
+    <string name="produk_detail"> Detail Produk </string>
     <string name="produk_nama"> Nama Produk </string>
     <string name="produk_harga"> Harga Produk </string>
     <string name="list">Beranda</string>
@@ -12,4 +12,5 @@
     <string name="btn_buy">Beli</string>
     <string name="produk_pengarang"> Nama Pengarang </string>
     <string name="tentang">Tentang</string>
+    <string name="halaman_detail" > Produk Pilihan Anda</string>
 </resources>

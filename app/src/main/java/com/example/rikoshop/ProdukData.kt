@@ -162,9 +162,14 @@ object ProdukData {
                 hero.gambar = produk_gambar[position] //mengambil gambar produk
                 hero.lokasi = produk_lokasi[position] //mengambil lokasi produk
                 hero.rating = produk_rating[position] //mengambil gambar rating
+                hero.detail = produk_detail[position]
                 list.add(hero) //masukkan ke list
             }
 
             return list //dikembalikan per list berisi 4 elemen tersebut
         }
+
+
+
+
 }
