@@ -12,8 +12,8 @@
     <ImageView
         android:id="@+id/img_item_photo"
         android:layout_marginTop="6dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         tools:src="@android:color/darker_gray" />
@@ -57,6 +57,18 @@
             android:maxLines="2"
             android:textStyle="bold"
             tools:text="@string/produk_harga" />
+
+        <TextView
+            android:id="@+id/tv_item_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines = "1"
+            android:layout_marginBottom="6dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="@string/produk_detail" />
+
 
         <ImageView
             android:layout_width="70dp"

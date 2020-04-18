@@ -10,11 +10,13 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     //
     private var list: ArrayList<Produk> = arrayListOf() //mendefinisikan list
     private lateinit var listProdukAdapter: ListProdukAdapter
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +41,9 @@ class MainActivity : AppCompatActivity() {
         showRecyclerList()
 
         setListClickAction()
-    }
 
+
+    }
 
 
     //memanggil function halaman berbentuk list
@@ -52,13 +54,16 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
+
+
     //menampilkan list menu di tampilan awal halaman
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onContextItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         setMode(item.itemId) //memeriksan item mana yang di klik
         return super.onContextItemSelected(item)
     }
@@ -67,39 +72,41 @@ class MainActivity : AppCompatActivity() {
     //objek untuk memeriksa item yang di klik
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
-            R.id.action_list -> { //menampilkan halaman list
-                showRecyclerList()
+
+            R.id.tentang -> {
+                val moveIntent = Intent(this@MainActivity, halaman_tentang::class.java )
+                startActivity(moveIntent)
+            }
+
+            R.id.keluar -> {
+                exitProcess(1)
             }
 
 
-            R.id.action_cardview -> {
-            }
         }
+
     }
 
 
     private fun setListClickAction() {
 
-
-
-
-            listProdukAdapter.setOnItemClickCallback(object : ListProdukAdapter.OnItemClickCallback {
-                override fun onItemClick(data: Produk) {
-                    val manageDetailIntent =
-                        Intent(this@MainActivity, produkdetailpage::class.java)
-                            .apply {
-                                putExtra(produkdetailpage.EXTRA_NAME, data.nama)
-                                putExtra(produkdetailpage.EXTRA_IMAGE_URL, data.gambar)
-                                putExtra(produkdetailpage.EXTRA_HARGA, data.harga)
-                                putExtra(produkdetailpage.EXTRA_DESKRIPSI, data.detail)
-                            }
-                    startActivity(manageDetailIntent)
-                }
-            })
-
+        listProdukAdapter.setOnItemClickCallback(object : ListProdukAdapter.OnItemClickCallback {
+            override fun onItemClick(data: Produk) {
+                val pindah =
+                    Intent(this@MainActivity, produkdetailpage::class.java)
+                        .apply {
+                            putExtra(produkdetailpage.EXTRA_NAME, data.nama)
+                            putExtra(produkdetailpage.EXTRA_IMAGE_URL, data.gambar)
+                            putExtra(produkdetailpage.EXTRA_HARGA, data.harga)
+                            putExtra(produkdetailpage.EXTRA_DESKRIPSI, data.detail)
+                            putExtra(produkdetailpage.EXTRA_LOKASI, data.lokasi)
+                        }
+                startActivity(pindah)
+            }
+        })
 
 
     }
 
-
 }
+

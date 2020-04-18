@@ -53,6 +53,7 @@ class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Ada
         holder.tvpengarang.text = produk.pengarang //menyimpan detail produk
         holder.tvharga.text = produk.harga //menyimpan harga produk
         holder.tvlokasi.text = produk.lokasi //menyimpan variabel lokasi
+        holder.tvdetail.text = produk.detail //menyimpan detail produk
 
 
         //membuat adapter klik
@@ -80,6 +81,7 @@ class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Ada
         var tvgambar : ImageView = itemView.findViewById(R.id.img_item_photo) //membaca dan inisiasi gambar produk
         var tvlokasi : TextView = itemView.findViewById(R.id.tv_item_tempat) //membaca dan mengambil lokasi
         var tvrating : ImageView = itemView.findViewById(R.id.tv_item_rating) //membaca dan mengambil rating
+        var tvdetail : TextView = itemView.findViewById(R.id.tv_item_detail) //membaca dan mengambil detail
 
     }
 

@@ -16,6 +16,7 @@ class produkdetailpage : AppCompatActivity() {
         const val EXTRA_IMAGE_URL = "Gambar tidak tersedia"
         const val EXTRA_HARGA = "Harga tidak tersedia"
         const val EXTRA_DESKRIPSI = "Deskripsi tidak dituliskan"
+        const val EXTRA_LOKASI = "Lokasi tidak ditemukan"
     }
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
@@ -30,6 +31,7 @@ class produkdetailpage : AppCompatActivity() {
         pdp_judul.setText(intent.getStringExtra(EXTRA_NAME))
         pdp_harga.setText(intent.getStringExtra(EXTRA_HARGA))
         pdp_deskripsi.setText(intent.getStringExtra(EXTRA_DESKRIPSI))
+        pdp_lokasi.setText(intent.getStringExtra(EXTRA_LOKASI))
 
         Glide.with(this)
             .load(intent.getIntExtra(EXTRA_IMAGE_URL, 1)).into(pdp_gambar)
