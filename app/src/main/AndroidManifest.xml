@@ -6,10 +6,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+
         <activity android:name=".halaman_tentang" android:label="Tentang Pembuat" />
 
 
@@ -24,10 +26,9 @@
 
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:label="Halaman Utama" />
 
 
-        </activity>
         <activity
             android:name=".produkdetailpage"
             android:label="Produk Pilihan Anda" />
