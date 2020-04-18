@@ -24,6 +24,15 @@ class produkdetailpage : AppCompatActivity() {
         setContentView(R.layout.activity_produkdetailpage)
 
         showProductDetail()
+
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
 

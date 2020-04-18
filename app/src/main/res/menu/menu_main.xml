@@ -18,4 +18,11 @@
         android:id = "@+id/keluar"
         android:title="Keluar"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Search" />
 </menu>
