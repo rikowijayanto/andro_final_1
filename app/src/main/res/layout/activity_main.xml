@@ -13,10 +13,6 @@
          android:src="@drawable/banner_fix"
          />
 
-     <TabWidget
-         android:layout_width="match_parent"
-         android:layout_height="50dp" />
-
      <androidx.recyclerview.widget.RecyclerView
          android:id="@+id/rv_shop"
          android:layout_width="match_parent"

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tentangaku"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/riko_foto"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="100dp"
+                >
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+
+        </FrameLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black"
+            android:text="Riko Wijayanto"
+            android:gravity="center_horizontal"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@android:color/black"
+            android:text="mr.rikowijayanto@gmail.com | 2020"
+            android:gravity="center_horizontal"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

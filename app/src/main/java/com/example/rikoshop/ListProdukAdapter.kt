@@ -1,10 +1,15 @@
 package com.example.rikoshop
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -14,6 +19,11 @@ import com.bumptech.glide.request.RequestOptions
 
 class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Adapter <ListProdukAdapter.ListViewHolder> () {
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
 
     //implement all methos dari listprodukadapter
@@ -25,6 +35,7 @@ class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Ada
 
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+
         val produk = listproduk[position] //menyimpan dalam bentuk produk
 
         Glide.with(holder.itemView.context)
@@ -42,12 +53,23 @@ class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Ada
         holder.tvpengarang.text = produk.pengarang //menyimpan detail produk
         holder.tvharga.text = produk.harga //menyimpan harga produk
         holder.tvlokasi.text = produk.lokasi //menyimpan variabel lokasi
+        holder.tvdetail.text = produk.detail //menyimpan detail produk
+
+
+        //membuat adapter klik
+
+
+        holder.itemView.setOnClickListener() {
+            onItemClickCallback.onItemClick(listproduk[holder.adapterPosition])
+        }
+
     }
 
 
     override fun getItemCount(): Int {
         return listproduk.size
     }
+
 
 
 
@@ -59,6 +81,13 @@ class ListProdukAdapter (var listproduk : ArrayList<Produk> ) : RecyclerView.Ada
         var tvgambar : ImageView = itemView.findViewById(R.id.img_item_photo) //membaca dan inisiasi gambar produk
         var tvlokasi : TextView = itemView.findViewById(R.id.tv_item_tempat) //membaca dan mengambil lokasi
         var tvrating : ImageView = itemView.findViewById(R.id.tv_item_rating) //membaca dan mengambil rating
+        var tvdetail : TextView = itemView.findViewById(R.id.tv_item_detail) //membaca dan mengambil detail
+
+    }
+
+
+    interface OnItemClickCallback {
+        fun onItemClick(data: Produk)
     }
 
 

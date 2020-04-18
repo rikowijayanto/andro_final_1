@@ -2,21 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    //menyusun sebuah menu list awal
 
-    //menampilkan tombol ke menu list
     <item
-        android:id="@+id/action_list"
-        android:title="@string/list"
+        android:id = "@+id/beranda"
+        android:title="Halaman Utama"
         app:showAsAction="never"/>
 
-    //menampilkan tombol ke menu cardview
-    <item
-        android:id="@+id/action_cardview"
-        android:title="@string/card_view"
-        app:showAsAction="never"/>
 
     <item
         android:id = "@+id/tentang"
-        android:title="@string/tentang"/>
+        android:title="@string/tentang"
+        app:showAsAction="never"/>
+
+    <item
+        android:id = "@+id/keluar"
+        android:title="Keluar"
+        app:showAsAction="never"/>
 </menu>
