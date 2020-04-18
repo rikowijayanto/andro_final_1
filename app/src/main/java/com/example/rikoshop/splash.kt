@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class splash : AppCompatActivity() {
 
-
-    private val SPLASH_TIME_OUT:Long = 3000 // 1 sec
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,7 +16,7 @@ class splash : AppCompatActivity() {
             val pindah = Intent(this@splash, MainActivity::class.java)
             startActivity(pindah)
             finish()
-        }, SPLASH_TIME_OUT)
+        }, 3000)
     }
 
 

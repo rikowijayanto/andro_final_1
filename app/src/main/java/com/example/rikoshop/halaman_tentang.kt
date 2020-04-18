@@ -5,13 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.annotation.Nullable
 import kotlin.system.exitProcess
 
 class halaman_tentang : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.halaman_tentang)
+
+
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -23,6 +33,7 @@ class halaman_tentang : AppCompatActivity() {
         setMode(item.itemId) //memeriksan item mana yang di klik
         return super.onContextItemSelected(item)
     }
+
 
 
     //objek untuk memeriksa item yang di klik
