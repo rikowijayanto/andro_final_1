@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-
-class GridProdukAdapter (var listproduk : ArrayList<Produk> ): RecyclerView.Adapter <GridProdukAdapter.GridViewHolder> () {
+class GridHeroAdapter (var listproduk : ArrayList<Produk> ): RecyclerView.Adapter <GridHeroAdapter.GridViewHolder> () {
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): GridViewHolder {
@@ -19,14 +19,15 @@ class GridProdukAdapter (var listproduk : ArrayList<Produk> ): RecyclerView.Adap
 
 
     override fun onBindViewHolder(holder: GridViewHolder, position: Int) {
-
-        val produk = listproduk[position] //mendeklarasikan sebuah variabel baru
+        val produk = listproduk[position] //menyimpan dalam bentuk produk
 
         Glide.with(holder.itemView.context)
             .load(produk.gambar)
-            .apply(RequestOptions().override(350, 750))
+            .apply(RequestOptions().override(350, 350))
             .into(holder.tvgambar)
     }
+
+
 
     override fun getItemCount(): Int {
         return listproduk.size
@@ -34,6 +35,6 @@ class GridProdukAdapter (var listproduk : ArrayList<Produk> ): RecyclerView.Adap
 
 
     inner class GridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvgambar: ImageView = itemView.findViewById(R.id.img_item_photo)
+        var tvgambar : ImageView = itemView.findViewById(R.id.img_item_photo) //membaca dan inisiasi gambar produk
     }
 }

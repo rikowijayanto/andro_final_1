@@ -8,6 +8,11 @@
         android:title="Halaman Utama"
         app:showAsAction="never"/>
 
+    <item
+        android:id = "@+id/grid"
+        android:title="Tampilan Grid"
+        app:showAsAction="never"/>
+
 
     <item
         android:id = "@+id/tentang"

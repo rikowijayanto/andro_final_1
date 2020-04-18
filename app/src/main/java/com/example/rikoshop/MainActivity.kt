@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     //
     private var list: ArrayList<Produk> = arrayListOf() //mendefinisikan list
     private lateinit var listProdukAdapter: ListProdukAdapter
+    private lateinit var gridProdukAdapter: GridHeroAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +52,13 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private fun showRecyclerGrid() {
+        rvproduk.layoutManager = GridLayoutManager(this, 2)
+        gridProdukAdapter = GridHeroAdapter(list)
+        rvproduk.adapter = gridProdukAdapter
+    }
+
+
 
 
 
@@ -80,6 +85,14 @@ class MainActivity : AppCompatActivity() {
 
             R.id.keluar -> {
                 exitProcess(1)
+            }
+
+            R.id.grid -> {
+                showRecyclerGrid()
+            }
+
+            R.id.beranda -> {
+                showRecyclerList()
             }
 
 
